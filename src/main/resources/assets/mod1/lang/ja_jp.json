@@ -1,0 +1,12 @@
+{
+  "item.mod1.mp5": "MP5",
+  "tooltip.mod1.mp5": "右クリック長押しで連射・射程64ブロック・試作版は弾薬不要",
+  "death.attack.mp5": "%1$s は %2$s のMP5に撃たれた",
+  "death.attack.mp5.player": "%1$s は %2$s のMP5に撃たれた",
+  "message.mod1.mp5.fired": "MP5 発射：%s発",
+  "message.mod1.mp5.hit": "命中：%s",
+  "message.mod1.mp5.no_damage": "命中・ダメージなし：%s",
+  "message.mod1.mp5.health": "（残りHP %s）",
+  "message.mod1.mp5.block": "ブロックに命中",
+  "message.mod1.mp5.miss": "外れ"
+}

@@ -1,0 +1,12 @@
+{
+  "item.mod1.mp5": "MP5",
+  "tooltip.mod1.mp5": "Hold right click to fire • 64 block range • prototype: unlimited ammo",
+  "death.attack.mp5": "%1$s was shot by %2$s with an MP5",
+  "death.attack.mp5.player": "%1$s was shot by %2$s with an MP5",
+  "message.mod1.mp5.fired": "MP5 Shots: %s",
+  "message.mod1.mp5.hit": "Hit: %s",
+  "message.mod1.mp5.no_damage": "Hit without damage: %s",
+  "message.mod1.mp5.health": " (HP %s)",
+  "message.mod1.mp5.block": "Hit a block",
+  "message.mod1.mp5.miss": "Miss"
+}
