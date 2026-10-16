@@ -87,6 +87,7 @@ public class ExampleMod {
 
     public ExampleMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+        GunNetwork.register();
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::registerAttributes);

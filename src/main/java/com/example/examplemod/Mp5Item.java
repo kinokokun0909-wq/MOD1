@@ -70,7 +70,10 @@ public final class Mp5Item extends Item {
         }
     }
 
-    private void fire(ServerLevel level, Player player) {
+    // Both vanilla item use and the dedicated trigger packet share this gate.
+    public void fire(ServerLevel level, Player player) {
+        if (!player.isAlive() || player.isSpectator()
+                || player.getCooldowns().isOnCooldown(this)) return;
         player.getCooldowns().addCooldown(this, FIRE_INTERVAL_TICKS);
         Vec3 start = player.getEyePosition();
         Vec3 direction = player.getLookAngle();
