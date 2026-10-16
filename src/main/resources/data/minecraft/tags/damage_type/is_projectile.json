@@ -1,4 +1,7 @@
 {
   "replace": false,
-  "values": ["mod1:mp5_bullet"]
+  "values": [
+    "mod1:mp5_bullet",
+    "mod1:sniper_bullet"
+  ]
 }

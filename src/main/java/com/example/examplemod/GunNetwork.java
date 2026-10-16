@@ -22,7 +22,7 @@ public final class GunNetwork {
                     context.enqueueWork(() -> {
                         var player = context.getSender();
                         if (player != null && player.isAlive() && !player.isSpectator()
-                                && player.getMainHandItem().getItem() instanceof Mp5Item gun) {
+                                && player.getMainHandItem().getItem() instanceof GunItem gun) {
                             gun.fire(player.serverLevel(), player);
                         }
                     });

@@ -8,5 +8,15 @@
   "message.mod1.mp5.no_damage": "Hit without damage: %s",
   "message.mod1.mp5.health": " (HP %s)",
   "message.mod1.mp5.block": "Hit a block",
-  "message.mod1.mp5.miss": "Miss"
+  "message.mod1.mp5.miss": "Miss",
+  "item.mod1.sniper": "Sniper Rifle",
+  "tooltip.mod1.sniper": "Right click: single shot | Damage 20 | Range 128 | 1.5s cooldown | Unlimited ammo",
+  "death.attack.sniper": "%1$s was shot by %2$s with an Sniper Rifle",
+  "death.attack.sniper.player": "%1$s was shot by %2$s with an Sniper Rifle",
+  "message.mod1.sniper.fired": "Sniper Rifle Shots: %s",
+  "message.mod1.sniper.hit": "Hit: %s",
+  "message.mod1.sniper.no_damage": "Hit without damage: %s",
+  "message.mod1.sniper.health": " (HP %s)",
+  "message.mod1.sniper.block": "Hit a block",
+  "message.mod1.sniper.miss": "Miss"
 }

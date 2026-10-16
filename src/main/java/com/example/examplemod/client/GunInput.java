@@ -2,7 +2,7 @@ package com.example.examplemod.client;
 
 import com.example.examplemod.ExampleMod;
 import com.example.examplemod.GunNetwork;
-import com.example.examplemod.Mp5Item;
+import com.example.examplemod.GunItem;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = ExampleMod.MODID, value = Dist.CLIENT)
 public final class GunInput {
     private static int ticksUntilNextShot;
+    private static boolean triggerWasDown;
 
     private GunInput() {}
 
@@ -22,7 +23,7 @@ public final class GunInput {
                 && minecraft.screen == null && minecraft.isWindowActive()
                 && !minecraft.isPaused() && minecraft.player.isAlive()
                 && !minecraft.player.isSpectator()
-                && minecraft.player.getMainHandItem().getItem() instanceof Mp5Item;
+                && minecraft.player.getMainHandItem().getItem() instanceof GunItem;
     }
 
     @SubscribeEvent
@@ -41,12 +42,15 @@ public final class GunInput {
         Minecraft minecraft = Minecraft.getInstance();
         if (!canFire(minecraft) || !minecraft.options.keyUse.isDown()) {
             ticksUntilNextShot = 0;
+            triggerWasDown = false;
             return;
         }
+        GunItem gun = (GunItem) minecraft.player.getMainHandItem().getItem();
         if (ticksUntilNextShot > 0) ticksUntilNextShot--;
-        if (ticksUntilNextShot == 0) {
+        if (ticksUntilNextShot == 0 && (gun.isAutomatic() || !triggerWasDown)) {
             GunNetwork.requestShot();
-            ticksUntilNextShot = 2;
+            ticksUntilNextShot = gun.fireInterval();
         }
+        triggerWasDown = true;
     }
 }
